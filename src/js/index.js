@@ -18,6 +18,26 @@ var Cadet = React.createClass({displayName: "Cadet",
 	},
 });
 
+
+var CadetForm = React.createClass({displayName: "CadetForm",
+	getDefaultProps:function(){
+		return {
+			person: '',
+			status: '',
+		}
+	},
+	render: function() {
+		return(
+			<div className="cadet">
+				<input placeholder="Name"/>
+				<input placeholder="Status"/>
+				<button>Add Cadet</button>
+			</div>
+		)
+	},
+});
+
+
 var BCapp = React.createClass({displayName: "BCapp",
   getInitialState:function(){
     return {
@@ -64,6 +84,7 @@ var BCapp = React.createClass({displayName: "BCapp",
       			)
       		})
       	}
+      	<CadetForm />
       </div>
     );
   }
