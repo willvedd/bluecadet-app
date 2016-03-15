@@ -60,7 +60,7 @@ var BCapp = React.createClass({displayName: "BCapp",
       	{
       		self.state.staff.map(function(employee){
       			return (
-      				<Cadet person={employee.person} status={employee.status}/>
+      				<Cadet key={"person-"+employee.person} person={employee.person} status={employee.status}/>
       			)
       		})
       	}
