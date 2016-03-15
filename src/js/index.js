@@ -9,23 +9,12 @@ var BCapp = React.createClass({displayName: "BCapp",
     }
   },
 
-  toggleState:function(){
-	this.setState({
-  		hightlight: !this.state.hightlight,
-  	});
-  },
-
-  isHighlighted:function(){
-  	return (this.state.hightlight == true);
-  },
-
   render: function() {
   	var self = this;
   	console.log("render",this.state);
     return (
       <div>
-      	<h1 className={self.isHighlighted() ? 'highlighted' :''}><i>The</i> Official Bluecadet App</h1>
-      	<button onClick={()=>self.toggleState()}>{self.isHighlighted()?  'Unhighlight':'Highlight'}</button>
+      	<h1 className={'highlighted'}><i>The</i> Official Bluecadet App</h1>
       </div>
     );
   }
