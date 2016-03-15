@@ -1,15 +1,12 @@
 Bluecadet React Demo
 ====================
 
-Initialization
----------------------
+##Initialization
+
 1. `git clone`
 2. `npm install`
 3. `gulp`
 4. Open ./dist/index.html in your browser
-
-Step - by - stepp
----------------------
 
 ##Step 1 - Setup
 `git checkout step-1`
