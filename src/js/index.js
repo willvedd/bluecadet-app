@@ -57,8 +57,8 @@ var CadetForm = React.createClass({displayName: "CadetForm",
 	render: function() {
 		return(
 			<div className="cadet">
-				<input onChange={(e)=>this.setName(e)} ref="input-name" placeholder="Name"/>
-				<input onChange={(e)=>this.setStatus(e)} ref="input-status" placeholder="Status"/>
+				<input value={this.state.name} onChange={(e)=>this.setName(e)} ref="input-name" placeholder="Name"/>
+				<input value={this.state.status} onChange={(e)=>this.setStatus(e)} ref="input-status" placeholder="Status"/>
 				<button onClick={()=>this._submit()}>Add Cadet</button>
 			</div>
 		)
