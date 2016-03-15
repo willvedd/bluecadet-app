@@ -3,9 +3,10 @@ Bluecadet React Demo
 
 Initialization
 ---------------------
-1. git clone
-2. npm install
-3. gulp
+1. `git clone`
+2. `npm install`
+3. `gulp`
+4. Open ./dist/index.html in your browser
 
 Step - by - stepp
 ---------------------
