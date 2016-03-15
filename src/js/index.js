@@ -2,6 +2,21 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 
+var Cadet = React.createClass({displayName: "Cadet",
+	getDefaultProps:function(){
+		return {
+			person: 'Kat',
+		}
+	},
+	render: function() {
+		return(
+			<div className="cadet">
+				<h2>{this.props.person}</h2>
+			</div>
+		)
+	},
+});
+
 var BCapp = React.createClass({displayName: "BCapp",
   getInitialState:function(){
     return {
@@ -26,6 +41,10 @@ var BCapp = React.createClass({displayName: "BCapp",
       <div>
       	<h1 className={self.isHighlighted() ? 'highlighted' :''}><i>The</i> Official Bluecadet App</h1>
       	<button onClick={()=>self.toggleState()}>{self.isHighlighted()?  'Unhighlight':'Highlight'}</button>
+
+      	<Cadet person="Greg"/>
+      	<Cadet person="Putra"/>
+      	<Cadet/>
       </div>
     );
   }
