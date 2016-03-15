@@ -6,12 +6,13 @@ var Cadet = React.createClass({displayName: "Cadet",
 	getDefaultProps:function(){
 		return {
 			person: 'Kat',
+			status: 'is busy',
 		}
 	},
 	render: function() {
 		return(
 			<div className="cadet">
-				<h2>{this.props.person}</h2>
+				<h2>{this.props.person} {this.props.status}</h2>
 			</div>
 		)
 	},
@@ -42,9 +43,9 @@ var BCapp = React.createClass({displayName: "BCapp",
       	<h1 className={self.isHighlighted() ? 'highlighted' :''}><i>The</i> Official Bluecadet App</h1>
       	<button onClick={()=>self.toggleState()}>{self.isHighlighted()?  'Unhighlight':'Highlight'}</button>
 
-      	<Cadet person="Greg"/>
-      	<Cadet person="Putra"/>
-      	<Cadet/>
+      	<Cadet person="Greg" status="is jetlagged"/>
+      	<Cadet person="Putra" status="likes Iggy"/>
+      	<Cadet person="Kat" status="luvs her cats"/>
       </div>
     );
   }
