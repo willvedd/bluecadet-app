@@ -26,12 +26,40 @@ var CadetForm = React.createClass({displayName: "CadetForm",
 			status: '',
 		}
 	},
+
+	getInitialState:function(){
+		return {
+			name: '',
+			status: '',
+		}
+	},
+
+	setName:function(e){
+		this.setState({
+			name: e.target.value,
+		})
+	},
+
+	setStatus:function(e){
+		this.setState({
+			status: e.target.value,
+		})
+	},
+
+	_submit:function(){
+		this.props.submitCadet(this.state.name,this.state.status);
+		this.setState({
+			status: '',
+			name: '',
+		});
+	},
+
 	render: function() {
 		return(
 			<div className="cadet">
-				<input placeholder="Name"/>
-				<input placeholder="Status"/>
-				<button>Add Cadet</button>
+				<input onChange={(e)=>this.setName(e)} ref="input-name" placeholder="Name"/>
+				<input onChange={(e)=>this.setStatus(e)} ref="input-status" placeholder="Status"/>
+				<button onClick={()=>this._submit()}>Add Cadet</button>
 			</div>
 		)
 	},
@@ -69,6 +97,15 @@ var BCapp = React.createClass({displayName: "BCapp",
   	return (this.state.hightlight == true);
   },
 
+  submitCadet:function(newName,newStatus){
+  	this.setState({
+  		staff: this.state.staff.concat([{
+	  		person: newName,
+	  		status: newStatus,
+  		}]),
+  	});
+  },
+
   render: function() {
   	var self = this;
   	console.log("render",this.state);
@@ -84,7 +121,7 @@ var BCapp = React.createClass({displayName: "BCapp",
       			)
       		})
       	}
-      	<CadetForm />
+      	<CadetForm submitCadet={this.submitCadet}/>
       </div>
     );
   }
