@@ -12,7 +12,7 @@ var Cadet = React.createClass({displayName: "Cadet",
 	render: function() {
 		return(
 			<div className="cadet">
-				<h2>{this.props.person} {this.props.status}</h2>
+				<h2>{this.props.person} <Status value={this.props.status}/></h2>
 			</div>
 		)
 	},
