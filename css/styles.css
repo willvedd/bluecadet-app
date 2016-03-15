@@ -1,9 +1,3 @@
-.list .list-item .input {
-  color: orange;
-}
-.list .list-item .button {
-  background-color: transparent;
-}
-.list .list-item .input, .list .list-item .button {
-  padding: 15px;
+.highlighted {
+  background-color: blue;
 }
